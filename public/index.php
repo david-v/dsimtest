@@ -15,6 +15,12 @@ session_start();
 
 // Instantiate the app
 $settings = require __DIR__ . '/../src/settings.php';
+
+if (array_key_exists('phpIniOverrides', $settings['settings'])) {
+    foreach ($settings['settings']['phpIniOverrides'] as $key => $val) {
+        ini_set($key, $val);
+    }
+}
 $app = new \Slim\App($settings);
 
 // Set up dependencies
