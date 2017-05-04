@@ -93,7 +93,7 @@ class UrlParser
         $protocol = $uri->getScheme() . '://';
         $host = $uri->getHost();
         $path = str_replace('//', '/', $uri->getPath() . $uri->getBasePath());
-        $query = '?' . $uri->getQuery();
+        $query = $uri->getQuery() ? ('?' . $uri->getQuery()) : '';
 
         return $protocol . $host . $path . $query;
     }
