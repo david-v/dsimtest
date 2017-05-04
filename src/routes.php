@@ -1,10 +1,8 @@
 <?php
 // Routes
 
-$app->get('/[{name}]', function ($request, $response, $args) {
-    // Sample log message
-    $this->logger->info("Slim-Skeleton '/' route");
+use App\Controller\ParseUrlController;
 
-    // Render index view
-    return $this->renderer->render($response, 'index.phtml', $args);
+$app->get('/[{path:.*}]', function($request, $response) {
+    return (new ParseUrlController($request, $response, $this->renderer))->parseUrl();
 });

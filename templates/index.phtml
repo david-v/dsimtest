@@ -2,37 +2,43 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <title>Slim 3</title>
-        <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+        <title>doctorSIM Test</title>
         <style>
             body {
-                margin: 50px 0 0 0;
-                padding: 0;
                 width: 100%;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
                 font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-                text-align: center;
                 color: #aaa;
                 font-size: 18px;
             }
 
             h1 {
-                color: #719e40;
+                color: #2EA6DE;
                 letter-spacing: -3px;
-                font-family: 'Lato', sans-serif;
                 font-size: 100px;
                 font-weight: 200;
                 margin-bottom: 0;
             }
+
+            pre {
+                font-family: "Consolas", monospace;
+            }
+
+            code {
+                text-align: left;
+                width: 90%;
+                max-width: 600px;
+            }
         </style>
     </head>
     <body>
-        <h1>Slim</h1>
-        <div>a microframework for PHP</div>
+        <h1>doctorSIM Test</h1>
+        <h2>url parser...</h2>
 
-        <?php if (isset($name)) : ?>
-            <h2>Hello <?= htmlspecialchars($name); ?>!</h2>
-        <?php else: ?>
-            <p>Try <a href="http://www.slimframework.com">SlimFramework</a>
+        <?php if (isset($parsedUrl)) : ?>
+            <pre><code><?php echo $parsedUrl ?></code></pre>
         <?php endif; ?>
     </body>
 </html>
